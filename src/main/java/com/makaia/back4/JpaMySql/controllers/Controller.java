@@ -44,7 +44,7 @@ public class Controller {
         this.service.eliminarComentario(comentarioId);
     }
 
-    @PutMapping()
+    @PutMapping("/{comentarioId}")
     public Comentario editarComentario(@PathVariable Long comentarioId, @RequestBody ComentarioDTO dto) {
         return this.service.editarComentario(comentarioId, dto);
     }
