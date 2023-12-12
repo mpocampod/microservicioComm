@@ -1,8 +1,6 @@
 package com.makaia.back4.JpaMySql.dtos;
 
 public class ComentarioDTO {
-
-    private Long id;
     private String contenido;
     private Long usuario;
     private Long publicacion;
@@ -10,19 +8,10 @@ public class ComentarioDTO {
     public ComentarioDTO() {
     }
 
-    public ComentarioDTO(Long id, String contenido, Long usuario, long publicacion) {
-        this.id = id;
+    public ComentarioDTO(String contenido, Long usuario, long publicacion) {
         this.contenido = contenido;
         this.usuario = usuario;
         this.publicacion = publicacion;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getContenido() {
@@ -33,19 +22,28 @@ public class ComentarioDTO {
         this.contenido = contenido;
     }
 
-    public Long getUsuarioId() {
+    public Long getUsuario() {
         return usuario;
     }
 
-    public void setUsuarioId(Long usuario) {
+    public void setUsuario(Long usuario) {
         this.usuario = usuario;
     }
 
-    public Long getIdPublicacion() {
+    public Long getPublicacion() {
         return publicacion;
     }
 
-    public void setIdPublicacion(Long publicacion) {
+    public void setPublicacion(Long publicacion) {
         this.publicacion = publicacion;
+    }
+
+    @Override
+    public String toString() {
+        return "ComentarioDTO{" +
+                "contenido='" + contenido + '\'' +
+                ", usuario=" + usuario +
+                ", publicacion=" + publicacion +
+                '}';
     }
 }

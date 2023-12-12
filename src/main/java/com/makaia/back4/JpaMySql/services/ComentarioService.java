@@ -30,10 +30,10 @@ public class ComentarioService {
 
     public Comentario crearComentario(ComentarioDTO comentarioDTO) {
 
-        Publicacion publicacion = publicacionRepository.findById(comentarioDTO.getIdPublicacion())
+        Publicacion publicacion = publicacionRepository.findById(comentarioDTO.getPublicacion())
                 .orElseThrow(() -> new RedSocialApiException("La publicación no existe"));
 
-        Usuario usuario = usuarioRepository.findById(comentarioDTO.getUsuarioId())
+        Usuario usuario = usuarioRepository.findById(comentarioDTO.getUsuario())
                 .orElseThrow(() -> new RedSocialApiException("El usuario no existe"));
 
         Comentario comentario = new Comentario();
@@ -69,10 +69,10 @@ public class ComentarioService {
         Comentario comentario = comentarioRepository.findById(comentarioId)
                 .orElseThrow(() -> new RedSocialApiException("El comentario no existe"));
 
-        Publicacion publicacion = publicacionRepository.findById(comentarioDTO.getIdPublicacion())
+        Publicacion publicacion = publicacionRepository.findById(comentarioDTO.getPublicacion())
                 .orElseThrow(() -> new RedSocialApiException("La publicación no existe"));
 
-        Usuario usuario = usuarioRepository.findById(comentarioDTO.getUsuarioId())
+        Usuario usuario = usuarioRepository.findById(comentarioDTO.getUsuario())
                 .orElseThrow(() -> new RedSocialApiException("El usuario no existe"));
 
         comentario.setUsuario(usuario);

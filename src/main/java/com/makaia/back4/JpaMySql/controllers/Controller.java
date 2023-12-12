@@ -21,22 +21,13 @@ public class Controller {
 
     @PostMapping()
     public Comentario crearComentario(@RequestBody ComentarioDTO dto) {
+        System.out.println(dto);
         return this.service.crearComentario(dto);
     }
 
     @GetMapping()
     public List<Comentario> listarComentarios() {
         return this.service.obtenerComentarios();
-    }
-
-    @GetMapping("/{usuarioId}/comentarios")
-    public List<Comentario> obtenerComentariosPorUsuario(@PathVariable Long usuarioId) {
-        return this.service.obtenerComentariosPorUsuario(usuarioId);
-    }
-
-    @GetMapping("/{publicacionId}/comentarios")
-    public List<Comentario> obtenerComentariosPorPublicacion(@PathVariable Long publicacionId) {
-        return this.service.obtenerComentariosPorPublicacion(publicacionId);
     }
 
     @DeleteMapping("/{comentarioId}")
